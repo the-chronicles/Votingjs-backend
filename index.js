@@ -198,6 +198,16 @@ app.post('/login', async (req, res) => {
     res.json({ success: true, voter });
 });
 
+app.post('/enroll-fingerprint', (req, res) => {
+    const { credential, voterId } = req.body;
+  
+    // Here, you would typically process the credential and save it to the database
+    // For example, save it to a MongoDB collection associated with the voterId
+    
+    // Example response
+    res.json({ success: true, message: 'Fingerprint enrolled successfully!' });
+  });
+
 // Endpoint to get candidates
 app.get('/candidates', (req, res) => {
     res.send(candidates);
