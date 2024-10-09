@@ -217,7 +217,7 @@ app.post('/register-fingerprint', async (req, res) => {
         const result = await fido.attestationResult(attestation, { challenge: "server-challenge" });
         const { id: credentialId, publicKey } = result.authnrData;
 
-        // Store credential for user
+        // Store credential for users
         credentials[userId] = { credentialId, publicKey };
 
         res.json({ success: true });
